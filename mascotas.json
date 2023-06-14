@@ -1,0 +1,39 @@
+{
+    "mascotas": [
+        {
+            "id": 1,
+            "nombre": "fluffy",
+            "mascota": "true",
+            "animal": "gato",
+            "edadHumana": "7"
+        },
+        {
+            "id": 2,
+            "nombre": "Balto",
+            "mascota": "true",
+            "animal": "perro",
+            "edadHumana": "11"
+        },
+        {
+            "id": 3,
+            "nombre": "Mandibulas",
+            "mascota": "false",
+            "animal": "tiburon",
+            "edadHumana": "50"
+        },
+        {
+            "id": "049f81",
+            "nombre": "Pepito",
+            "mascota": "true",
+            "animal": "perro",
+            "edadHumana": "10"
+        },
+        {
+            "id": "63664c",
+            "nombre": "Don Gato",
+            "mascota": "false",
+            "animal": "gato",
+            "edadHumana": "20"
+        }
+    ]
+}
