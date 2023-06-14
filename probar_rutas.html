@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form id="formMascotaPorId">
+        <label for="idMascota">ID Mascota</label>
+        <input type="text" id="idMascota">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <form id="formMascotaPorIdSelect">
+        <label for="idMascota">ID Mascota</label>
+        <select name="idMascotaSelect" id="idMascotaSelect">
+            <!--  AGREGAR OPTION -->
+        </select>
+        <input type="submit" value="Buscar">
+    </form>
+
+
+    <script>
+
+        let formMascotaPorId = document.getElementById("formMascotaPorId");
+
+        formMascotaPorId.addEventListener("submit", (event) => {
+            event.preventDefault();
+            fetch("http://localhost:3000/api/mascotas/" + idMascota.value)
+                .then(response => response.json())
+                .then(respuesta => {
+                    alert(respuesta.data.nombre);
+                })
+        })
+
+
+        const main = () => {
+            fetch("http://localhost:3000/api/mascotas/")
+                .then(response => response.json())
+                .then(respuesta => {
+                    let mascotas = respuesta.data.mascotas;
+                    let options = "";
+
+                    mascotas.forEach(mascota => {
+                        options += `<option value="${mascota.id}">${mascota.nombre}</option>`
+                    })
+                    let idMascotaSelect = document.getElementById("idMascotaSelect");
+                    idMascotaSelect.innerHTML = options;
+
+
+                })
+
+        }
+
+        main();
+
+    </script>
+</body>
+
+</html>

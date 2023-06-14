@@ -1,11 +1,13 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
+const cors = require("cors");
 const { leerMascotas, escribirMascotas } = require("./utils.js");
 
 //instancia de express
 const app = express();
 //PROCESA LOS JSON QUE MANDEN MEDIANTE MÉTODOS COMO POST, PUT.
 app.use(express.json());
+app.use(cors());
 
 //LEVANTAMOS SERVIDOR ESCUCHANDO EN PUERTO 3000
 app.listen(3000, () =>
